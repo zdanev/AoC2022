@@ -28,6 +28,15 @@ def move_tail(i):
     prev = rope[i-1]
     cur = rope[i]
 
+    if cur[0] == prev[0] - 2 and cur[1] == prev[1] - 2:
+        cur = (prev[0] - 1, prev[1] - 1)
+    if cur[0] == prev[0] + 2 and cur[1] == prev[1] + 2:
+        cur = (prev[0] + 1, prev[1] + 1)
+    if cur[0] == prev[0] - 2 and cur[1] == prev[1] + 2:
+        cur = (prev[0] - 1, prev[1] + 1)
+    if cur[0] == prev[0] + 2 and cur[1] == prev[1] - 2:
+        cur = (prev[0] + 1, prev[1] - 1)
+
     if cur[0] == prev[0] - 2:
         cur = (prev[0] - 1, prev[1])
     if cur[0] == prev[0] + 2:
