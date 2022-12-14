@@ -1,5 +1,5 @@
 lines = None
-with open('day10/input.txt') as f:
+with open('input.txt') as f:
     lines = f.readlines()
 
 q = [20, 60, 100, 140, 180, 220]
@@ -9,6 +9,17 @@ x = 1
 cycle = 0
 def ping():
     global cycle, result
+    
+    # part 2
+    pixel = cycle % 40
+    if pixel - 1 <= x and x <= pixel + 1:
+        print("#", end="")
+    else:
+        print(".", end="")
+    if pixel == 39:
+        print("")
+    #.
+
     cycle += 1
     if cycle in q:
         result += cycle * x
